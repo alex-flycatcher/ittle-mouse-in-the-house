@@ -16,7 +16,7 @@ function App() {
     const [gameStarted, setGameStarted] = useState(false);
     const [gameOver, setGameOver] = useState(false);
     const [volume, setVolume] = useState(0.5);
-    const [showColorLabels, setShowColorLabels] = useState(true); 
+    const [showColorLabels, setShowColorLabels] = useState(false); 
 
     const audioRefs = {
         bgMusic: useRef(null),
@@ -42,7 +42,7 @@ function App() {
             audioRefs[key].current = new Audio(soundFiles[key]);
             // audioRefs[key].current.volume = volume;
         });
-        audioRefs.bgMusic.current.volume = volume * 0.5;
+        audioRefs.bgMusic.current.volume = volume * 0;
         audioRefs.hover.current.volume = volume;
         audioRefs.click.current.volume = volume;
         audioRefs.win.current.volume = volume;
@@ -56,7 +56,7 @@ function App() {
         //   }
         // });
         if (audioRefs.bgMusic.current) {
-            audioRefs.bgMusic.current.volume = volume * 0.5; // 背景音乐始终50%
+            audioRefs.bgMusic.current.volume = volume * 0.01; 
         }
         if (audioRefs.hover.current) audioRefs.hover.current.volume = volume;
         if (audioRefs.click.current) audioRefs.click.current.volume = volume;
@@ -201,7 +201,7 @@ function App() {
             </div>
 
             {gameOver && <p className="result">You found the mouse! 🎉</p>}
-            <div style={{ marginTop: "20px" }}>By Alex For Dan❤️</div>
+            {/* <div style={{ marginTop: "20px" }}>By Alex For Dan❤️</div> */}
 
             {/* 隐藏的音频元素 */}
             <audio ref={audioRefs.bgMusic} loop />
