@@ -186,6 +186,7 @@ function App() {
             </div>
 
             {gameOver && <p className="result">You found the mouse! 🎉</p>}
+            <div style={{marginTop:'20px'}}>By Alex For Dan❤️</div>
 
             {/* 隐藏的音频元素 */}
             <audio ref={audioRefs.bgMusic} loop />
