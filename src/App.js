@@ -16,6 +16,7 @@ function App() {
     const [gameStarted, setGameStarted] = useState(false);
     const [gameOver, setGameOver] = useState(false);
     const [volume, setVolume] = useState(0.5);
+    const [showColorLabels, setShowColorLabels] = useState(true); 
 
     const audioRefs = {
         bgMusic: useRef(null),
@@ -159,6 +160,20 @@ function App() {
                         {Math.round(volume * 100)}%
                     </label>
                 </div>
+
+                {/* Add checkbox control */}
+                <div className="control-group">
+                    <label>
+                        <input
+                            type="checkbox"
+                            checked={showColorLabels}
+                            onChange={() =>
+                                setShowColorLabels(!showColorLabels)
+                            }
+                        />
+                        Show color labels
+                    </label>
+                </div>
             </div>
 
             {!gameStarted ? (
@@ -180,13 +195,13 @@ function App() {
                             {house.clicked && house.id === mouseHouseId && "🐭"}
                             {house.clicked && house.id !== mouseHouseId && "❌"}
                         </div>
-                        <div className="house-color-label">{house.color}</div>
+                        {showColorLabels && <div className="house-color-label">{house.color}</div>}
                     </div>
                 ))}
             </div>
 
             {gameOver && <p className="result">You found the mouse! 🎉</p>}
-            <div style={{marginTop:'20px'}}>By Alex For Dan❤️</div>
+            <div style={{ marginTop: "20px" }}>By Alex For Dan❤️</div>
 
             {/* 隐藏的音频元素 */}
             <audio ref={audioRefs.bgMusic} loop />

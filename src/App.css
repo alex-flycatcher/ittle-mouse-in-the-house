@@ -113,3 +113,9 @@ input[type="range"] {
 
 p,div,select { font-size: large;}
 select {width: 60px;}
+input[type="checkbox"] {
+  /* width: 20px;       
+  height: 20px;     
+  margin-right: 8px;  */
+  transform: scale(1.5); /* 放大1.5倍 */
+}
