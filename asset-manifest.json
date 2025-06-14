@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/alex-flycatcher/ittle-mouse-in-the-house.git/static/css/main.bc1b9db6.css",
+    "main.js": "/alex-flycatcher/ittle-mouse-in-the-house.git/static/js/main.2283f78f.js",
+    "static/js/453.f42db3f8.chunk.js": "/alex-flycatcher/ittle-mouse-in-the-house.git/static/js/453.f42db3f8.chunk.js",
+    "index.html": "/alex-flycatcher/ittle-mouse-in-the-house.git/index.html",
+    "main.bc1b9db6.css.map": "/alex-flycatcher/ittle-mouse-in-the-house.git/static/css/main.bc1b9db6.css.map",
+    "main.2283f78f.js.map": "/alex-flycatcher/ittle-mouse-in-the-house.git/static/js/main.2283f78f.js.map",
+    "453.f42db3f8.chunk.js.map": "/alex-flycatcher/ittle-mouse-in-the-house.git/static/js/453.f42db3f8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bc1b9db6.css",
+    "static/js/main.2283f78f.js"
+  ]
+}
