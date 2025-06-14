@@ -3,10 +3,10 @@ import "./App.css";
 
 // 音效文件需要放在public/sounds目录下
 const soundFiles = {
-    bgMusic: "/sounds/bg-music.mp3",
-    hover: "/sounds/hover.mp3",
-    click: "/sounds/click.mp3",
-    win: "/sounds/win.mp3",
+    bgMusic: "./sounds/bg-music.mp3",
+    hover: "./sounds/hover.mp3",
+    click: "./sounds/click.mp3",
+    win: "./sounds/win.mp3",
 };
 
 function App() {
