@@ -16,7 +16,20 @@ function App() {
     const [gameStarted, setGameStarted] = useState(false);
     const [gameOver, setGameOver] = useState(false);
     const [volume, setVolume] = useState(0.5);
-    const [showColorLabels, setShowColorLabels] = useState(false); 
+    const [showColorLabels, setShowColorLabels] = useState(false);
+    const displayItems = [
+        "🍎",
+        "🍌",
+        "🍉",
+        "🍊",
+        "✏️",
+        "🍇",
+        "🍏",
+        "🥕",
+        "🐶",
+        "🐰",
+        "🖍️",
+    ];
 
     const audioRefs = {
         bgMusic: useRef(null),
@@ -56,7 +69,7 @@ function App() {
         //   }
         // });
         if (audioRefs.bgMusic.current) {
-            audioRefs.bgMusic.current.volume = volume * 0.01; 
+            audioRefs.bgMusic.current.volume = volume * 0.01;
         }
         if (audioRefs.hover.current) audioRefs.hover.current.volume = volume;
         if (audioRefs.click.current) audioRefs.click.current.volume = volume;
@@ -65,6 +78,7 @@ function App() {
 
     const initializeHouses = () => {
         const shuffledColors = [...colors].sort(() => Math.random() - 0.5);
+        const shuffledItems = [...displayItems].sort(() => Math.random() - 0.5);
         const newHouses = [];
 
         for (let i = 1; i <= numHouses; i++) {
@@ -72,6 +86,7 @@ function App() {
                 id: i,
                 color: shuffledColors[i % shuffledColors.length],
                 clicked: false,
+                displayedItem: shuffledItems[i % shuffledItems.length],
             });
         }
 
@@ -101,9 +116,17 @@ function App() {
         audioRefs.click.current.currentTime = 0;
         audioRefs.click.current.play();
 
-        const updatedHouses = houses.map((house) =>
-            house.id === id ? { ...house, clicked: true } : house
-        );
+        const updatedHouses = houses.map((house) => {
+            if (house.id === id) {
+                return {
+                    ...house,
+                    clicked: true,
+                    displayedItem:
+                        id === mouseHouseId ? "🐭" : house.displayedItem,
+                };
+            }
+            return house;
+        });
         setHouses(updatedHouses);
 
         if (id === mouseHouseId) {
@@ -192,10 +215,13 @@ function App() {
                             onClick={() => handleClickHouse(house.id)}
                             onMouseEnter={handleHouseHover}
                         >
-                            {house.clicked && house.id === mouseHouseId && "🐭"}
-                            {house.clicked && house.id !== mouseHouseId && "❌"}
+                            {house.clicked && house.displayedItem}
                         </div>
-                        {showColorLabels && <div className="house-color-label">{house.color}</div>}
+                        {showColorLabels && (
+                            <div className="house-color-label">
+                                {house.color}
+                            </div>
+                        )}
                     </div>
                 ))}
             </div>
