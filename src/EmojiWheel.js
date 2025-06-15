@@ -11,7 +11,7 @@ const emojis = [
     { emoji: "🤩", word: "excited", used: false },
     { emoji: "😟", word: "worried", used: false },
 ];
-
+const ding = process.env.PUBLIC_URL + "/sounds/ding.mp3";
 function EmojiWheel() {
     const [remainingEmojis, setRemainingEmojis] = useState([...emojis]);
     const [collectedCards, setCollectedCards] = useState([]);
@@ -159,9 +159,11 @@ function EmojiWheel() {
   
               // Gradually slow down
               spinCount.current++;
+              let dingSound = new Audio(ding);
+              dingSound.play();
               updateInterval(); // 速度变化时重建
               let oneRoundCount = remainingEmojis.length - collectedCards.length;
-              if (spinCount.current > oneRoundCount*3) {
+              if (spinCount.current > oneRoundCount*3 || oneRoundCount===1) {
                   stopSpinning(currentEmoji);
               }
           }, getSpinSpeed());
