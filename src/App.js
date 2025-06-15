@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { MemoryRouter  as Router, Routes, Route, Link } from 'react-router-dom';
 import MouseGame from './MouseGame';
 import EmojiWheel from './EmojiWheel';
 import './App.css';
