@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/ittle-mouse-in-the-house/static/css/main.60ac9f73.css",
-    "main.js": "/ittle-mouse-in-the-house/static/js/main.6c77d3b5.js",
+    "main.css": "/ittle-mouse-in-the-house/static/css/main.e256035c.css",
+    "main.js": "/ittle-mouse-in-the-house/static/js/main.b72c7e1a.js",
     "static/js/453.f42db3f8.chunk.js": "/ittle-mouse-in-the-house/static/js/453.f42db3f8.chunk.js",
     "index.html": "/ittle-mouse-in-the-house/index.html",
-    "main.60ac9f73.css.map": "/ittle-mouse-in-the-house/static/css/main.60ac9f73.css.map",
-    "main.6c77d3b5.js.map": "/ittle-mouse-in-the-house/static/js/main.6c77d3b5.js.map",
+    "main.e256035c.css.map": "/ittle-mouse-in-the-house/static/css/main.e256035c.css.map",
+    "main.b72c7e1a.js.map": "/ittle-mouse-in-the-house/static/js/main.b72c7e1a.js.map",
     "453.f42db3f8.chunk.js.map": "/ittle-mouse-in-the-house/static/js/453.f42db3f8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.60ac9f73.css",
-    "static/js/main.6c77d3b5.js"
+    "static/css/main.e256035c.css",
+    "static/js/main.b72c7e1a.js"
   ]
 }
