@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
-import "./MouseGame.css";
+// import "./App.css";
+import "./AnimalsGame.css";
 
 // 音效文件需要放在public/sounds目录下
 const soundFiles = {
@@ -9,7 +10,7 @@ const soundFiles = {
   win: process.env.PUBLIC_URL + "/sounds/win.mp3"
 };
 
-function MouseGame() {
+function AnimalGame() {
     const [numHouses, setNumHouses] = useState(5);
     const [houses, setHouses] = useState([]);
     const [mouseHouseId, setMouseHouseId] = useState(null);
@@ -17,19 +18,7 @@ function MouseGame() {
     const [gameOver, setGameOver] = useState(false);
     const [volume, setVolume] = useState(0.5);
     const [showColorLabels, setShowColorLabels] = useState(false);
-    const displayItems = [
-        "🍎",
-        "🍌",
-        "🍉",
-        "🍊",
-        "✏️",
-        "🍇",
-        "🍏",
-        "🥕",
-        "🐶",
-        "🐰",
-        "🖍️",
-    ];
+    const displayItems = ["🐸", "🐒", "🐊", "🦓", "🐘", "🦒", "🐎", "🦩", "🐬", "🐋", "🐼"];
 
     const audioRefs = {
         bgMusic: useRef(null),
@@ -238,4 +227,4 @@ function MouseGame() {
     );
 }
 
-export default MouseGame;
+export default AnimalGame;
