@@ -1,8 +1,3 @@
-body {
-  margin: 0;
-  padding: 0;
-  background: rgba(247, 3, 116, 1);
-}
 
 .hCqOlD {
   -webkit-animation: hCClNo 0.3s ease-in;
@@ -509,13 +504,6 @@ body {
     -ms-transform: rotate3d(1, 0, 0, -190deg);
     transform: rotate3d(1, 0, 0, -190deg);
   }
-}
-
-
-body {
-  margin: 0;
-  padding: 0;
-  background: rgba(247, 3, 116, 1);
 }
 
 .hCqOlD {
